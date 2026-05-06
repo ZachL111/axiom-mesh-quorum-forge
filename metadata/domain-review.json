@@ -1,0 +1,73 @@
+{
+  "repo": "axiom-mesh-quorum-forge",
+  "language": "SQL",
+  "category": "Distributed systems",
+  "goal": "Implement an SQL distributed systems project for quorum security rule linting, using safe and unsafe fixtures and remediation hints.",
+  "review_model": {
+    "terms": [
+      "quorum health",
+      "lease drift",
+      "replica lag",
+      "membership churn"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "quorum health",
+      "signal": 80,
+      "slack": 45,
+      "drag": 24,
+      "confidence": 73,
+      "score": 206,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "lease drift",
+      "signal": 68,
+      "slack": 54,
+      "drag": 15,
+      "confidence": 52,
+      "score": 197,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "replica lag",
+      "signal": 85,
+      "slack": 48,
+      "drag": 9,
+      "confidence": 71,
+      "score": 262,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "membership churn",
+      "signal": 74,
+      "slack": 52,
+      "drag": 10,
+      "confidence": 64,
+      "score": 234,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "quorum health",
+      "signal": 80,
+      "slack": 50,
+      "drag": 18,
+      "confidence": 49,
+      "score": 205,
+      "lane": "ship"
+    }
+  ]
+}
