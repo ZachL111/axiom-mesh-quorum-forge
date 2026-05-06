@@ -1,0 +1,17 @@
+{
+  "repo": "axiom-mesh-quorum-forge",
+  "thresholds": {
+    "signal": 4,
+    "slack": 1,
+    "confidence": 2,
+    "drag": 3,
+    "ship": 194,
+    "watch": 128
+  },
+  "terms": [
+    "quorum health",
+    "lease drift",
+    "replica lag",
+    "membership churn"
+  ]
+}
